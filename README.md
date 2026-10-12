@@ -18,7 +18,7 @@ Mimir fonctionne avec des **commandes slash**. Chaque commande est une classe qu
 
 > La liste des commandes évolue avec le projet.
 
-## Prérequis 
+## Prérequis
 
 - [JDK 27](https://jdk.java.net/27/)
 - [Maven](https://maven.apache.org/download.cgi#preview-4-x-release)
@@ -26,34 +26,34 @@ Mimir fonctionne avec des **commandes slash**. Chaque commande est une classe qu
 
 ## Installation
 
-'''bash
+```bash
 git clone https://forgejo.itwontfix.dev/Faalser/Mimir.git
 cd Mimir/Bot
-'''
+```
 
 Ou sur GitHub
 
-'''bash
+```bash
 git clone https://github.com/Faalser/Mimit.git
 cd Mimir/Bot
-'''
+```
 
 Créez un fichier '.env' dans 'Bot/' (il est ignoré par Git) :
 
-'''env
+```env
 TOKEN_BOT_DISCORD=votre_token_ici
-'''
+```
 
 ## Compilation et lancement
 
-'''bash
+```bash
 mvn clean package
 java -jar target/X.jar
-'''
+```
 
 ## Structure du projet
 
-'''
+```
 Mimir/
 |--Bot/                 # Module Maven du bot
 |   |--pom.xml
@@ -62,7 +62,7 @@ Mimir/
 |--HEADER.txt          # En-tête de license des fichiers source
 |--LICENSE             # AGPL-3.0
 |--README.md
-'''
+```
 
 ## Technologies
 
