@@ -1,0 +1,35 @@
+clone:
+  git:
+    image: woodpeckerci/plugin-git
+    settings:
+      depth: 0
+      partial: false
+
+steps:
+
+  - name: build
+    image: maven:4.0.0-rc-7
+    commands:
+      - cd Bot/
+      - mvn clean package
+      - mvn clean compile
+      - mvn clean test
+
+  - name: clone-to-github
+    image: alpine/git
+    environment:
+      SSH_KEY:
+        from_secret: SSH_KEY
+    commands:
+      - mkdir -p ~/.ssh
+      - echo "$SSH_KEY" > ~/.ssh/id_ed25519
+      - chmod 700 ~/.ssh/id_ed25519
+      - ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
+      - git remote add github git@github.com:Faalser/Mimir.git
+      - git push --mirror github
+
+when:
+  event:
+    - push
+    - pull_request
+    - tag
