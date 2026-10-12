@@ -12,9 +12,9 @@ Mimir fonctionne avec des **commandes slash**. Chaque commande est une classe qu
 
 | Commande | Description |
 | -------- | ----------- |
-| '/ping' | Affiche la latence du bot |
-| '/roll' | Lance un dé |
-| '/say' | Fait parler le bot |
+| `/ping` | Affiche la latence du bot |
+| `/roll` | Lance un dé |
+| `/say` | Fait parler le bot |
 
 > La liste des commandes évolue avec le projet.
 
@@ -26,19 +26,19 @@ Mimir fonctionne avec des **commandes slash**. Chaque commande est une classe qu
 
 ## Installation
 
+Sur Forgejo :
 ```bash
 git clone https://forgejo.itwontfix.dev/Faalser/Mimir.git
 cd Mimir/Bot
 ```
 
-Ou sur GitHub
-
+Ou sur GitHub :
 ```bash
 git clone https://github.com/Faalser/Mimit.git
 cd Mimir/Bot
 ```
 
-Créez un fichier '.env' dans 'Bot/' (il est ignoré par Git) :
+Créez un fichier `.env` dans `Bot/` (il est ignoré par Git) :
 
 ```env
 TOKEN_BOT_DISCORD=votre_token_ici
@@ -76,9 +76,9 @@ Mimir/
 
 Les contributions sont les bienvenues.
 
-1. Forkez le dépôt et créez une branche ('git checkout -b feature/la-fontionnalté')
-2. Ajoutez l'en-tête de license (HEADER.txt) en haut de chaque nouveau fichier source ('mvn spotless:apply')
-3. Vérifiez que le projet compile ('mvn clean package')
+1. Forkez le dépôt et créez une branche (`git checkout -b feature/la-fontionnalté`)
+2. Ajoutez l'en-tête de license (HEADER.txt) en haut de chaque nouveau fichier source (`mvn spotless:apply`)
+3. Vérifiez que le projet compile (`mvn clean package`)
 4. Ouvrez un pull request
 
 ## License
