@@ -48,7 +48,7 @@ TOKEN_BOT_DISCORD=votre_token_ici
 
 ```bash
 mvn clean package
-java -jar target/X.jar
+java -jar target/Mimir.jar
 ```
 
 ## Structure du projet
