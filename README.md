@@ -12,6 +12,8 @@ Mimir fonctionne avec des **commandes slash**. Chaque commande est une classe qu
 
 | Commande | Description |
 | -------- | ----------- |
+| `/clear` | Efface les messages |
+| `/help` | Affiche l'aide |
 | `/ping` | Affiche la latence du bot |
 | `/roll` | Lance un dé |
 | `/say` | Fait parler le bot |
@@ -55,7 +57,7 @@ java -jar target/Mimir.jar
 
 ```
 Mimir/
-|--Bot/                 # Module Maven du bot
+|--Bot/                # Module Maven du bot
 |   |--pom.xml
 |   |--src/main/java/  # Code source
 |--.woodpecker.yml     # Pipeline CI
@@ -76,10 +78,15 @@ Mimir/
 
 Les contributions sont les bienvenues.
 
-1. Forkez le dépôt et créez une branche (`git checkout -b feature/la-fontionnalté`)
-2. Ajoutez l'en-tête de license (HEADER.txt) en haut de chaque nouveau fichier source (`mvn spotless:apply`)
-3. Vérifiez que le projet compile (`mvn clean package`)
-4. Ouvrez un pull request
+1. Forkez le dépôt
+2. Créez une branche pour votre fonctionnalité (`git checkout -b feature/la-fonctionnalité`)
+3. Ajoutez l'en-tête de license (HEADER.txt) en haut de chaque nouveau fichier source (`mvn spotless:apply`)
+4. Vérifiez que le projet compile (`mvn clean package`)
+5. Ouvrez un pull request
+
+## Soutenir le projet
+
+Si vous souhaitez soutenir le projet, vous pouvez venir sur le serveur Discord communataire de Mimir : [DISCORD](https://discord.gg/STHZ7McGZh)
 
 ## License
 
