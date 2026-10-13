@@ -23,6 +23,7 @@ import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 public abstract class BaseCommands {
 
   protected final SlashCommandInteractionEvent event;
+  protected Long userID;
   protected String description;
   protected long gatewayPing;
   protected Date date;
@@ -31,6 +32,7 @@ public abstract class BaseCommands {
 
   protected BaseCommands(SlashCommandInteractionEvent event, String description) {
     this.event = event;
+    this.userID = this.event != null ? this.event.getUser().getIdLong() : null;
     this.description = description;
     this.gatewayPing = this.event != null ? this.event.getJDA().getGatewayPing() : 0;
     this.date = new Date();

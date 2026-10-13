@@ -17,6 +17,7 @@ Mimir fonctionne avec des **commandes slash**. Chaque commande est une classe qu
 | `/ping` | Affiche la latence du bot |
 | `/roll` | Lance un dé |
 | `/say` | Fait parler le bot |
+| `/stat` | Affiche les statistiques de l'utilisateur |
 
 > La liste des commandes évolue avec le projet.
 
@@ -90,8 +91,12 @@ Les contributions sont les bienvenues.
 
 ## Soutenir le projet
 
-Si vous souhaitez soutenir le projet, vous pouvez venir sur le serveur Discord communataire de Mimir : [DISCORD](https://discord.gg/STHZ7McGZh)
+Si vous souhaitez soutenir le projet, vous pouvez venir sur le serveur Discord communautaire de Mimir : [DISCORD](https://discord.gg/STHZ7McGZh)
 
 ## License
 
 Ce projet est distribué sous license [GNU AGPL v3](LICENSE).
+
+## Author
+
+- [@Faalser](https://forgejo.itwontfix.dev/Faalser)

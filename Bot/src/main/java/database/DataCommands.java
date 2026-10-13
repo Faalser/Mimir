@@ -21,8 +21,6 @@ import java.util.Properties;
 public abstract class DataCommands {
 
   Connection connection;
-  Statement statement;
-  String query;
 
   public DataCommands() {
     try {

@@ -23,12 +23,16 @@ public class Init extends DataCommands {
   }
 
   public void Initialize() throws SQLException {
-    statement = connection.createStatement();
-    query =
+    Statement statement = this.connection.createStatement();
+    String query =
         "CREATE TABLE IF NOT EXISTS Users ("
             + "id BIGINT PRIMARY KEY,"
             + "name VARCHAR(255) NOT NULL,"
-            + "warn INT DEFAULT 0"
+            + "warn INT DEFAULT 0,"
+            + "level INT DEFAULT 0,"
+            + "exp INT DEFAULT 0,"
+            + "nbMessage INT DEFAULT 0,"
+            + "timeVoice INT DEFAULT 0"
             + ");"
             + "CREATE TABLE IF NOT EXISTS Servers ("
             + "id BIGINT PRIMARY KEY,"
@@ -41,15 +45,15 @@ public class Init extends DataCommands {
   }
 
   public void DropAll() throws SQLException {
-    statement = connection.createStatement();
-    query = "DROP TABLE IF EXISTS Servers; DROP TABLE IF EXISTS Users";
+    Statement statement = connection.createStatement();
+    String query = "DROP TABLE IF EXISTS Servers; DROP TABLE IF EXISTS Users";
     statement.execute(query);
   }
 
   public void InsertServer(Long id, String name, Long owners_id, String owners_name)
       throws SQLException {
-    statement = connection.createStatement();
-    query =
+    Statement statement = connection.createStatement();
+    String query =
         "INSERT INTO Servers (id, name, owners_id, owners_name) VALUES ("
             + id
             + ", '"
@@ -63,8 +67,8 @@ public class Init extends DataCommands {
   }
 
   public void InsertUser(Long id, String name) throws SQLException {
-    statement = connection.createStatement();
-    query = "INSERT INTO Users (id, name) VALUES (" + id + ", '" + name + "')";
+    Statement statement = connection.createStatement();
+    String query = "INSERT INTO Users (id, name) VALUES (" + id + ", '" + name + "')";
     statement.execute(query);
   }
 }

@@ -14,7 +14,6 @@
  */
 package commands;
 
-import java.awt.Color;
 import mimir.Mimir;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -36,7 +35,7 @@ public class Help extends BaseCommands {
   public void main() {
     EmbedBuilder text = new EmbedBuilder();
     text.setTitle("Help menu");
-    text.setColor(Color.CYAN);
+    text.setColor(event.getGuild().getName().hashCode());
     for (SlashCommandData command : registry.toDiscordData()) {
       text.addField(command.getName(), command.getDescription(), false);
     }

@@ -16,7 +16,9 @@ package commands;
 
 import java.util.Collection;
 import java.util.List;
-import net.dv8tion.jda.api.entities.Message;
+import java.util.concurrent.CompletableFuture;
+import net.dv8tion.jda.api.entities.MessageHistory;
+import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
@@ -35,14 +37,42 @@ public class Clear extends BaseCommands {
 
   public void main() {
     this.setAmount(event.getOption("amount").getAsInt());
-    List<Message> messages = event.getChannel().getHistory().retrievePast(amount).complete();
-    try {
-      event.deferReply().queue();
-    } catch (Exception e) {
-      e.printStackTrace();
+    event.deferReply(true).queue();
+    MessageChannel channel = event.getChannel();
+    MessageHistory history = channel.getHistory();
+    purge(channel, history, this.amount, event);
+  }
+
+  private void purge(
+      MessageChannel channel,
+      MessageHistory history,
+      int remaining,
+      SlashCommandInteractionEvent event) {
+    if (remaining <= 0) {
+      event.getHook().sendMessage("Cleared " + this.amount + " messages.").queue();
+      return;
     }
-    messages.forEach(message -> message.delete().queue());
-    event.getHook().sendMessage("Messages cleared.").queue();
+    int nb = Math.min(remaining, 100);
+    history
+        .retrievePast(nb)
+        .queue(
+            messages -> {
+              if (messages.isEmpty()) {
+                event.getHook().sendMessage("Cleared " + this.amount + " messages.").queue();
+                return;
+              }
+              CompletableFuture.allOf(
+                      channel.purgeMessages(messages).toArray(new CompletableFuture[0]))
+                  .whenComplete(
+                      (v, err) -> {
+                        if (err != null) {
+                          event.getHook().sendMessage("Erreur: " + err.getMessage()).queue();
+                          return;
+                        }
+                        purge(channel, history, remaining - messages.size(), event);
+                      });
+            },
+            err -> event.getHook().sendMessage("Erreur: " + err.getMessage()).queue());
   }
 
   public Collection<OptionData> getOptions() {
