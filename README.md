@@ -28,13 +28,13 @@ Mimir fonctionne avec des **commandes slash**. Chaque commande est une classe qu
 
 ## Installation
 
-Sur Forgejo :
+Via Forgejo :
 ```bash
 git clone https://forgejo.itwontfix.dev/Faalser/Mimir.git
 cd Mimir/Bot
 ```
 
-Ou sur GitHub :
+Via GitHub :
 ```bash
 git clone https://github.com/Faalser/Mimit.git
 cd Mimir/Bot
@@ -57,13 +57,17 @@ java -jar target/Mimir.jar
 
 ```
 Mimir/
-|--Bot/                # Module Maven du bot
-|   |--pom.xml
-|   |--src/main/java/  # Code source
-|--.woodpecker.yml     # Pipeline CI
-|--HEADER.txt          # En-tête de license des fichiers source
-|--LICENSE             # AGPL-3.0
-|--README.md
+ |--Bot/                    # Module Maven du bot
+ |   |--src/main/
+ |   |       |--java/       # Code source
+ |   |       |--resources/  # Fichiers de configuration
+ |   |--src/test/           # Tests
+ |   |       |--java/
+ |   |--pom.xml             # Configuration Maven du projet
+ |--.woodpecker.yml         # Pipeline CI
+ |--HEADER.txt              # En-tête de license des fichiers source
+ |--LICENSE                 # AGPL-3.0
+ |--README.md
 ```
 
 ## Technologies
