@@ -1,8 +1,8 @@
 # Mimir
 
-[![Licence : AGPL v3](https://img.shields.io/badge/licence-AGPL--3.0-blue.svg)](LICENSE)
+[![Licence : AGPL v3](https://img.shields.io/github/license/Faalser/Mimir?style=plastic&color=lightgrey)](LICENSE)
 ![Java](https://img.shields.io/badge/Java-27-orange.svg)
-![JDA](https://img.shields.io/badge/JDA-6.5.0-5865F2.svg)
+![JDA](https://img.shields.io/github/v/release/discord-jda/JDA?include_prereleases&sort=date&display_name=tag&style=plastic)
 
 Mimir est un bot Discord écrit en Java, basé sur [JDA](https://github.com/discord-jda/JDA) et construit avec Maven.
 
@@ -91,7 +91,7 @@ Les contributions sont les bienvenues.
 
 ## Soutenir le projet
 
-Si vous souhaitez soutenir le projet, vous pouvez venir sur le serveur Discord communautaire de Mimir : [DISCORD](https://discord.gg/STHZ7McGZh)
+Si vous souhaitez soutenir le projet, vous pouvez venir sur le serveur Discord communautaire de Mimir : [![DISCORD](https://img.shields.io/discord/1420467694507135106?style=flat&logo=discord&label=Discord&color=darkgrey)](https://discord.gg/STHZ7McGZh)
 
 ## License
 
